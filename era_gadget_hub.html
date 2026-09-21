@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<title>Era Gadget Hub</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:#f5f7fb;color:#111827}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:#111827;color:#fff;padding:14px 18px;box-shadow:0 3px 14px #0002}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:21px;font-weight:800}.logo span{color:#60a5fa}
+.nav a{font-size:14px;margin-left:14px;color:#dbeafe}
+.hero{background:linear-gradient(135deg,#111827,#1e3a8a);color:#fff;padding:48px 18px}
+.hero-inner{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.badge{display:inline-block;background:#ffffff1a;border:1px solid #ffffff33;padding:7px 11px;border-radius:999px;font-size:12px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.02;margin:15px 0}
+.hero p{color:#dbeafe;font-size:16px;line-height:1.6}
+.btn{display:inline-block;border:0;border-radius:12px;padding:13px 18px;font-weight:750;cursor:pointer}
+.primary{background:#2563eb;color:#fff}.light{background:#fff;color:#111827}
+.hero-card{background:#ffffff12;border:1px solid #ffffff25;border-radius:24px;padding:24px;text-align:center}
+.phone{font-size:90px}
+section{max-width:1100px;margin:auto;padding:38px 18px}
+.section-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:20px}
+h2{margin:0;font-size:28px}.muted{color:#6b7280}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:18px;padding:16px;box-shadow:0 4px 18px #11182708}
+.product-img{height:150px;border-radius:14px;background:#eef2ff;display:grid;place-items:center;font-size:70px;margin-bottom:13px}
+.card h3{margin:6px 0}.price{font-size:20px;font-weight:800}.old{text-decoration:line-through;color:#9ca3af;font-size:13px;margin-left:5px}
+.offer{display:inline-block;background:#dcfce7;color:#166534;padding:4px 7px;border-radius:7px;font-size:11px;font-weight:700;margin:8px 0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feature{background:#fff;border-radius:16px;padding:20px;border:1px solid #e5e7eb}
+.icon{font-size:30px}
+.calculator{background:#111827;color:#fff;border-radius:22px;padding:24px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+label{font-size:13px;color:#cbd5e1}input,select{width:100%;padding:13px;margin-top:6px;border-radius:10px;border:1px solid #d1d5db;font-size:15px}
+.result{background:#1f2937;border-radius:14px;padding:18px;margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.result b{display:block;font-size:21px;margin-top:4px}
+.booking{background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:22px}
+footer{background:#111827;color:#cbd5e1;text-align:center;padding:28px 18px}
+@media(max-width:800px){.hero-inner{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}.nav a{display:none}}
+@media(max-width:480px){.grid{grid-template-columns:1fr 1fr}.product-img{height:120px;font-size:55px}.form-grid{grid-template-columns:1fr}.result{grid-template-columns:1fr 1fr}section{padding:28px 14px}}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<div class="logo">Era <span>Gadget Hub</span></div>
+<nav><a href="#deals">Deals</a><a href="#products">Products</a><a href="#book">Book</a><a href="#profit">Profit</a></nav>
+</div>
+</header>
+
+<div class="hero">
+<div class="hero-inner">
+<div>
+<span class="badge">⚡ Today's Gadget Deals</span>
+<h1>Smartphones.<br>Better Deals.</h1>
+<p>Explore phones and gadgets from popular brands. Check today's offer price and send a booking request in seconds.</p>
+<a class="btn primary" href="#products">View Deals</a>
+<a class="btn light" href="#book" style="margin-left:7px">Book Product</a>
+</div>
+<div class="hero-card"><div class="phone">📱</div><h2>Era Gadget Hub</h2><p>Deals • Bookings • Gadgets</p></div>
+</div>
+</div>
+
+<section id="deals">
+<div class="section-title"><div><h2>🔥 Today's Deals</h2><div class="muted">Sample products — edit prices anytime</div></div></div>
+<div class="grid">
+<div class="card"><div class="product-img">🍎</div><h3>iPhone 17 Pro Max</h3><span class="offer">LIMITED DEAL</span><div class="price">₹99,999 <span class="old">₹1,29,999</span></div><br><a class="btn primary" href="#book" onclick="selectProduct('iPhone 17 Pro Max')">Book Now</a></div>
+<div class="card"><div class="product-img">📱</div><h3>Galaxy S26 Ultra</h3><span class="offer">SPECIAL OFFER</span><div class="price">₹89,999 <span class="old">₹1,19,999</span></div><br><a class="btn primary" href="#book" onclick="selectProduct('Galaxy S26 Ultra')">Book Now</a></div>
+<div class="card"><div class="product-img">⚡</div><h3>OnePlus 15</h3><span class="offer">HOT DEAL</span><div class="price">₹59,999 <span class="old">₹69,999</span></div><br><a class="btn primary" href="#book" onclick="selectProduct('OnePlus 15')">Book Now</a></div>
+<div class="card"><div class="product-img">📸</div><h3>Vivo X300 Pro</h3><span class="offer">TODAY ONLY</span><div class="price">₹69,999 <span class="old">₹79,999</span></div><br><a class="btn primary" href="#book" onclick="selectProduct('Vivo X300 Pro')">Book Now</a></div>
+</div>
+</section>
+
+<section id="products">
+<div class="section-title"><div><h2>Why Era Gadget Hub?</h2><div class="muted">Simple shopping experience</div></div></div>
+<div class="features">
+<div class="feature"><div class="icon">🏷️</div><h3>Offer Prices</h3><p class="muted">Show your latest promotional prices clearly.</p></div>
+<div class="feature"><div class="icon">📦</div><h3>Easy Booking</h3><p class="muted">Customers can submit product and contact details.</p></div>
+<div class="feature"><div class="icon">💬</div><h3>Quick Contact</h3><p class="muted">Connect customers through your preferred WhatsApp or Telegram channel.</p></div>
+</div>
+</section>
+
+<section id="profit">
+<div class="calculator">
+<h2>💰 Profit Calculator</h2>
+<p style="color:#cbd5e1">Enter your buying and selling prices.</p>
+<div class="form-grid">
+<div><label>Buying Price (₹)</label><input id="buy" type="number" value="50000" oninput="calc()"></div>
+<div><label>Selling Price (₹)</label><input id="sell" type="number" value="60000" oninput="calc()"></div>
+<div><label>Delivery / Other Cost (₹)</label><input id="cost" type="number" value="500" oninput="calc()"></div>
+<div><label>Platform / Other Fee (₹)</label><input id="fee" type="number" value="0" oninput="calc()"></div>
+</div>
+<div class="result">
+<div>Revenue<b id="revenue">₹60,000</b></div>
+<div>Total Cost<b id="totalCost">₹50,500</b></div>
+<div>Net Profit<b id="profitValue">₹9,500</b></div>
+</div>
+</div>
+</section>
+
+<section id="book">
+<div class="booking">
+<h2>📦 Product Booking</h2>
+<p class="muted">Send a booking request. Replace the contact number in the code with your actual business number.</p>
+<div class="form-grid">
+<div><label>Product</label><input id="product" placeholder="Select a product"></div>
+<div><label>Customer Name</label><input id="name" placeholder="Your name"></div>
+<div><label>Mobile Number</label><input id="mobile" placeholder="10-digit mobile number"></div>
+<div><label>City</label><input id="city" placeholder="Your city"></div>
+</div>
+<br>
+<button class="btn primary" onclick="book()">Send Booking Request</button>
+</div>
+</section>
+
+<footer>
+<b>Era Gadget Hub</b><br>
+<span>Phones • Gadgets • Deals</span><br><br>
+© 2026 Era Gadget Hub
+</footer>
+
+<script>
+function selectProduct(p){document.getElementById('product').value=p}
+function calc(){
+ const b=Number(document.getElementById('buy').value)||0;
+ const s=Number(document.getElementById('sell').value)||0;
+ const c=Number(document.getElementById('cost').value)||0;
+ const f=Number(document.getElementById('fee').value)||0;
+ document.getElementById('revenue').textContent='₹'+s.toLocaleString('en-IN');
+ document.getElementById('totalCost').textContent='₹'+(b+c+f).toLocaleString('en-IN');
+ document.getElementById('profitValue').textContent='₹'+(s-b-c-f).toLocaleString('en-IN');
+}
+function book(){
+ const p=document.getElementById('product').value.trim();
+ const n=document.getElementById('name').value.trim();
+ const m=document.getElementById('mobile').value.trim();
+ const c=document.getElementById('city').value.trim();
+ if(!p||!n||!m){alert('Please enter product, name and mobile number.');return}
+ const text=`Era Gadget Hub Booking%0A%0AProduct: ${p}%0AName: ${n}%0AMobile: ${m}%0ACity: ${c}`;
+ // Replace 919999999999 with your actual WhatsApp number.
+ window.open('https://wa.me/919999999999?text='+text,'_blank');
+}
+calc();
+</script>
+</body>
+</html>
